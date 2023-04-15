@@ -1,0 +1,30 @@
+@import './base.css';
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+    background-color: #1e1f2e;
+}
+form {
+  width: 30%;
+  margin: 5em auto;
+  padding: 3em;
+
+}
+input {
+  width: 100%;
+  padding: .8em;
+}
+
+select {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: .8em;
+  color: white;
+  background-color: #000000;
+  text-transform: uppercase;
+}
