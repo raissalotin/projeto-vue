@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const nome = ref('')
 const data = ref('')
@@ -24,6 +24,14 @@ function validar(){
   }
 }
 
+const mensagem = computed(()=>{
+  if(senha.value != confirma.value){
+    return 'As senhas são diferentes'
+  }
+else{
+  return ''
+}
+})
 </script>
 
 <template>
@@ -39,12 +47,10 @@ function validar(){
    
 <br>
    <label for="text">endereço: </label>
-    <input type="text" v-on:keypress="ok=false" v-model="endereco" required placeholder="Digite seu endereço" />
-    
-  
+    <input type="text" v-on:keypress="ok=false" v-model="endereco" required placeholder="Digite seu endereço" /><br>
 <br>
     <label for="text">cidade: </label>
-    <input type="text" v-on:keypress="ok=false" v-model="cidade" required placeholder="Digite sua cidade" />
+    <input type="text" v-on:keypress="ok=false" v-model="cidade" required placeholder="Digite sua cidade" /><br>
     
 <br>
 
@@ -64,7 +70,7 @@ function validar(){
     <br>
 
     <label for="text">biografia: </label>
-    <input type="text" v-on:keypress="ok=false" v-model="biografia" placeholder="Digite sua biografia" />
+    <input type="text" v-on:keypress="ok=false" v-model="biografia" placeholder="Digite sua biografia" /><br>
     <br>
 
 
@@ -103,7 +109,7 @@ function validar(){
     <option value="TO">Tocantins</option>
   </select> 
   
-  <br>
+  <br><br>
 
   <label for="password">senha: </label>
     <input type="password" v-on:keypress="ok= false" v-model="senha" required placeholder="digite sua senha"/><br>
@@ -143,3 +149,4 @@ function validar(){
 </div>
 
 </template>
+
